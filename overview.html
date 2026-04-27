@@ -1,1 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Overview</title>
+<link rel="stylesheet" href="styles.css">
 
+<style>
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.cards {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.card {
+    border: 1px solid black;
+    padding: 10px;
+    flex: 1;
+}
+
+.special {
+    background-color: lightblue;
+}
+
+@media (min-width: 768px) {
+    .container {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<header>
+<h1>Overview</h1>
+</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="data.html">Projects</a>
+<a href="contact.html">Contact</a>
+<a href="overview.html">Overview</a>
+</nav>
+
+<main class="container">
+
+<section>
+<h2>Profile</h2>
+<p>My name is Mohamed. I am learning web development.</p>
+
+<h2>Skills</h2>
+<ul>
+<li>HTML</li>
+<li>CSS</li>
+<li>Java</li>
+</ul>
+</section>
+
+<section>
+<h2>Projects</h2>
+
+<div class="cards">
+<div class="card">Bank System</div>
+<div class="card special">Portfolio Website</div>
+<div class="card">Calculator</div>
+<div class="card">Web Design</div>
+</div>
+
+</section>
+
+</main>
+
+<footer>
+<p>© 2026 Mohamed</p>
+</footer>
+
+</body>
+</html>
