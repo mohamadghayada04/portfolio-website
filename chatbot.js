@@ -4,8 +4,13 @@ const chatBox = document.getElementById("chat-box");
 
 const responses = [
     { question: "hello", answer: "Hi there!" },
-    { question: "who are you", answer: "I am your chatbot." },
-    { question: "what do you do", answer: "I help answer questions." }
+    { question: "hi", answer: "Hello!" },
+    { question: "who are you", answer: "I am Mohamed's chatbot." },
+    { question: "what do you do", answer: "I answer basic questions." },
+    { question: "your name", answer: "My name is Bot." },
+    { question: "skills", answer: "Mohamed knows HTML, CSS, and Java." },
+    { question: "projects", answer: "Check the Projects page!" },
+    { question: "contact", answer: "Go to the Contact page." }
 ];
 
 form.addEventListener("submit", function(e) {
