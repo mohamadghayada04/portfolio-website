@@ -23,7 +23,7 @@ form.addEventListener("submit", function(e) {
     userMessage.classList.add("user");
     chatBox.appendChild(userMessage);
 
-    let reply = "I don't understand.";
+let reply = "Try asking about skills, projects, or contact.";
 
     responses.forEach(item => {
         if (userText.includes(item.question)) {
