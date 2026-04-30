@@ -1,0 +1,6 @@
+1. The id selector has the highest specificity.
+2. The class selector has medium specificity.
+3. The element selector has the lowest specificity.
+
+Order from highest to lowest:
+#unique > .text > p
