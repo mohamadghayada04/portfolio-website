@@ -1,0 +1,21 @@
+/* Exported from Figma (authentication UI) */
+
+.container {
+  width: 1440px;
+  height: 1024px;
+  background-color: #ffffff;
+}
+
+.input {
+  width: 200px;
+  height: 30px;
+  margin: 10px;
+  border: 1px solid #ccc;
+}
+
+.button {
+  width: 100px;
+  height: 40px;
+  background-color: blue;
+  color: white;
+}
