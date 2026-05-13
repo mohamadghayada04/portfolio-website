@@ -1,21 +1,106 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Specificity Test</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Specificity Exercise — Mohammed Ghayada</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Specificity: 0-0-1 (element) */
+    p { color: blue; }
+    /* Specificity: 0-1-0 (class) */
+    .text { color: green; }
+    /* Specificity: 0-1-1 (class + element) */
+    p.text { color: red; }
+    /* Specificity: 1-0-0 (ID) */
+    #unique { color: purple; }
+    /* Specificity: 0-2-1 (two classes + element) */
+    p.text.highlight { color: orange; }
 
-<style>
-p { color: blue; }
-.text { color: green; }
-#unique { color: red; }
-</style>
+    .spec-box {
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin: 1rem 0;
+      font-family: monospace;
+      box-shadow: var(--shadow);
+    }
+    .spec-box p { margin-bottom: 0.5rem; max-width: 100%; }
 
+    .answers-box {
+      background: #eff6ff;
+      border-left: 3px solid var(--color-accent);
+      padding: 1.25rem 1.5rem;
+      margin-top: 1.5rem;
+      border-radius: var(--radius);
+    }
+    .answers-box h3 { color: var(--color-accent); margin-bottom: 0.75rem; }
+    .answers-box ol { color: var(--color-text-muted); padding-left: 1.25rem; }
+    .answers-box li { margin-bottom: 0.5rem; font-size: 0.95rem; }
+    code {
+      background: #e0e7ff;
+      color: var(--color-accent);
+      padding: 0.1em 0.4em;
+      border-radius: 3px;
+      font-size: 0.88em;
+    }
+  </style>
 </head>
 <body>
 
-<p>This is a paragraph</p>
-<p class="text">This is class styled</p>
-<p id="unique">This is id styled</p>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+    <a href="index.html" class="site-title">Mohammed Ghayada</a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="data.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="overview.html">Overview</a></li>
+        <li><a href="chatbot.html">Chatbot</a></li>
+        <li><a href="card.html">Card</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <h1>CSS Specificity Exercise</h1>
+    <p>Live demonstration of CSS specificity rules from Lab 4 — Exercise 1. Each paragraph below is styled by a different selector combination.</p>
+
+    <section aria-labelledby="demo-heading">
+      <h2 id="demo-heading">Live Demo</h2>
+      <div class="spec-box">
+        <p>1. Plain <code>&lt;p&gt;</code> — element selector → <strong>blue</strong> (0-0-1)</p>
+        <p class="text">2. <code>&lt;p class="text"&gt;</code> — class selector wins → <strong>green</strong> (0-1-0)</p>
+        <p class="text">3. Same but <code>p.text</code> rule applies → <strong>red</strong> (0-1-1)</p>
+        <p id="unique" class="text">4. <code>id="unique"</code> — ID selector wins → <strong>purple</strong> (1-0-0)</p>
+        <p class="text highlight">5. <code>class="text highlight"</code> — two classes → <strong>orange</strong> (0-2-1)</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="answers-heading">
+      <h2 id="answers-heading">Answers &amp; Explanation</h2>
+      <div class="answers-box">
+        <h3>What colour does each paragraph render, and why?</h3>
+        <ol>
+          <li><strong>Plain &lt;p&gt;</strong>: <em>blue</em> — only <code>p</code> (0-0-1) applies.</li>
+          <li><strong>&lt;p class="text"&gt;</strong>: <em>green</em> — <code>.text</code> (0-1-0) beats <code>p</code> (0-0-1).</li>
+          <li><strong>&lt;p class="text"&gt;</strong> with <code>p.text</code>: <em>red</em> — (0-1-1) beats (0-1-0).</li>
+          <li><strong>&lt;p id="unique"&gt;</strong>: <em>purple</em> — ID selector (1-0-0) beats all class/element combos.</li>
+          <li><strong>&lt;p class="text highlight"&gt;</strong>: <em>orange</em> — <code>p.text.highlight</code> (0-2-1) beats <code>p.text</code> (0-1-1).</li>
+        </ol>
+        <p style="margin-top:1rem;"><strong>Key rule:</strong> Specificity = (inline, ID, class, element). Higher specificity always wins regardless of order in the stylesheet.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Mohammed Ghayada · Developer Portfolio · Web Technologies — UVT</p>
+  </footer>
 
 </body>
 </html>

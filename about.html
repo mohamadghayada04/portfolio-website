@@ -1,35 +1,121 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Mohammed Ghayada</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Internal CSS (HW2: demonstrate internal CSS placement) -->
+  <style>
+    .about-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #eff6ff;
+      border: 3px solid var(--color-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+    }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      list-style: none;
+      margin-top: 0.75rem;
+    }
+    .skills-list li {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: var(--color-accent);
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+    }
+    .timeline {
+      border-left: 2px solid var(--color-border);
+      padding-left: 1.5rem;
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .timeline-item .year {
+      font-size: 0.8rem;
+      color: var(--color-accent);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-    <h1>About Me</h1>
-</header>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="data.html">Projects</a>
-    <a href="contact.html">Contact</a>
-    <a href="overview.html">Overview</a>
-    <a href="chatbot.html">Chatbot</a>
-    <a href="card.html">Card</a>
-</nav>
+  <header>
+    <a href="index.html" class="site-title">Mohammed Ghayada</a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="data.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="overview.html">Overview</a></li>
+        <li><a href="chatbot.html">Chatbot</a></li>
+        <li><a href="card.html">Card</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<main>
-    <p style="color:red;">I am learning web development.</p>
-    <p>I am a student learning programming and web development.</p>
-</main>
+  <main id="main-content">
 
-<footer>
-    <p>© 2026 Mohamed</p>
-</footer>
+    <section aria-labelledby="about-heading">
+      <div class="about-avatar" aria-hidden="true">👨‍💻</div>
+      <h1 id="about-heading">About Me</h1>
+      <p>I'm Mohammed Ghayada, a first-year Artificial Intelligence student at the West University of Timișoara. I'm passionate about programming and web development, always looking to build new things and improve my skills.</p>
+      <!-- Inline CSS demo (HW2 requirement) -->
+      <p style="font-style: italic; color: var(--color-accent);">"Every expert was once a beginner. Keep building."</p>
+    </section>
+
+    <section aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Technical Skills</h2>
+      <ul class="skills-list">
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript</li>
+        <li>Java</li>
+        <li>Git &amp; GitHub</li>
+        <li>Figma (basics)</li>
+        <li>CSS Grid &amp; Flexbox</li>
+        <li>Responsive Design</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="edu-heading">
+      <h2 id="edu-heading">Education</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="year">2025 – Present</span>
+          <h3>BSc Artificial Intelligence — West University of Timișoara</h3>
+          <p>Core modules: Web Technologies, Algorithms, Object-Oriented Programming, Databases.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="year">2024</span>
+          <h3>Baccalaureate — Timișoara</h3>
+          <p>Mathematics &amp; Informatics profile.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Mohammed Ghayada · Developer Portfolio · Web Technologies — UVT</p>
+  </footer>
 
 </body>
 </html>

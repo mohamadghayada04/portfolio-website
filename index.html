@@ -1,55 +1,85 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Developer Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohammed Ghayada — Developer Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<header>
-    <h1>Mohamed's Developer Portfolio</h1>
-</header>
+  <header>
+    <a href="index.html" class="site-title">Mohammed Ghayada</a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="data.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="overview.html">Overview</a></li>
+        <li><a href="chatbot.html">Chatbot</a></li>
+        <li><a href="card.html">Card</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="data.html">Projects</a>
-    <a href="contact.html">Contact</a>
-    <a href="overview.html">Overview</a>
-    <a href="chatbot.html">Chatbot</a>
-    <a href="card.html">Card</a>
-</nav>
+  <main id="main-content">
 
-<main id="main-content">
+    <section class="hero" aria-labelledby="hero-heading">
+      <p class="hero-sub">Student Developer · Year 1 · UVT</p>
+      <h1 id="hero-heading">Building projects,<br>learning every day.</h1>
+      <p>I'm Mohamed, a first-year student at the West University of Timișoara. I build web projects and Java applications while growing my programming skills.</p>
+      <a href="about.html" class="btn" style="display:inline-block; margin-top:1rem; text-decoration:none;">Learn More →</a>
+    </section>
 
-<section>
-    <h2>Welcome</h2>
-    <p>I am learning web development and Java. This is my portfolio website.</p>
-</section>
+    <section aria-labelledby="featured-heading">
+      <h2 id="featured-heading">Featured Projects</h2>
+      <div class="cards-grid">
+        <article class="card featured">
+          <p class="card-tag">Web</p>
+          <h3>Developer Portfolio</h3>
+          <p>A multi-page personal portfolio site built with HTML, CSS, and JavaScript for Web Technologies at UVT.</p>
+        </article>
+        <article class="card">
+          <p class="card-tag">Java</p>
+          <h3>Bank System</h3>
+          <p>A console-based banking application with account management built in Java.</p>
+        </article>
+        <article class="card">
+          <p class="card-tag">Java</p>
+          <h3>Calculator</h3>
+          <p>A functional calculator application built in Java with a clean UI.</p>
+        </article>
+        <article class="card">
+          <p class="card-tag">Web</p>
+          <h3>Web Design Project</h3>
+          <p>Responsive web design project exploring CSS Grid and Flexbox layouts.</p>
+        </article>
+      </div>
+    </section>
 
-<section>
-    <h2>Featured Skills</h2>
-    <ul>
-        <li>HTML & CSS</li>
-        <li>Java</li>
-        <li>GitHub</li>
-    </ul>
-</section>
+    <section aria-labelledby="updates-heading">
+      <h2 id="updates-heading">Latest Updates</h2>
+      <ul style="list-style:none; display:flex; flex-direction:column; gap:0.75rem;">
+        <li style="border-left:3px solid var(--color-accent); padding-left:1rem;">
+          <strong>May 2026</strong> — Completed HW2 for Web Technologies at UVT.
+        </li>
+        <li style="border-left:3px solid var(--color-border); padding-left:1rem;">
+          <strong>April 2026</strong> — Built chatbot with JavaScript DOM manipulation.
+        </li>
+        <li style="border-left:3px solid var(--color-border); padding-left:1rem;">
+          <strong>March 2026</strong> — Finished responsive overview page with CSS Grid.
+        </li>
+      </ul>
+    </section>
 
-<section>
-    <h2>Latest Updates</h2>
-    <p>Working on web design assignments and improving my coding skills.</p>
-</section>
+  </main>
 
-</main>
-
-<footer>
-    <p>© 2026 Mohamed</p>
-</footer>
+  <footer>
+    <p>© 2026 Mohammed Ghayada · Developer Portfolio · Web Technologies — UVT</p>
+  </footer>
 
 </body>
 </html>

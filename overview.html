@@ -1,90 +1,213 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Overview</title>
-<link rel="stylesheet" href="styles.css">
-
-<style>
-.container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-}
-
-.cards {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.card {
-    border: 1px solid black;
-    padding: 10px;
-    flex: 1;
-}
-
-.special {
-    background-color: lightblue;
-}
-
-@media (min-width: 768px) {
-    .container {
-        grid-template-columns: 2fr 1fr;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Overview — Mohammed Ghayada</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Mobile-first: single column */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
     }
-}
-</style>
 
+    /* Desktop: 3-column grid */
+    @media (min-width: 768px) {
+      .overview-grid {
+        grid-template-columns: 240px 1fr 200px;
+      }
+    }
+
+    /* Sidebar — Flexbox */
+    .profile-sidebar {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: #eff6ff;
+      border: 3px solid var(--color-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+    }
+
+    .profile-name {
+      font-family: 'Merriweather', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--color-text);
+      margin: 0;
+    }
+
+    .profile-role {
+      font-size: 0.82rem;
+      color: var(--color-accent);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .profile-desc {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+    }
+
+    .skills-bars { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.5rem; }
+    .skill-row { display: flex; flex-direction: column; gap: 2px; }
+    .skill-label { display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--color-text-muted); }
+    .skill-bar { height: 6px; background: var(--color-surface-2); border-radius: 3px; overflow: hidden; }
+    .skill-fill { height: 100%; background: var(--color-accent); border-radius: 3px; }
+
+    /* Project cards — Grid */
+    .project-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    @media (min-width: 600px) {
+      .project-cards { grid-template-columns: 1fr 1fr; }
+    }
+
+    .project-card:nth-child(2) { border-top: 3px solid #16a34a; }
+    .project-card.highlight { border-top: 3px solid var(--color-accent); background: #eff6ff; }
+
+    /* Contact aside — Flexbox */
+    .contact-aside {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .contact-aside h2 {
+      font-size: 0.85rem;
+      margin-top: 0;
+      border: none;
+      padding: 0;
+      color: var(--color-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .contact-aside a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.88rem;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-aside a:hover { color: var(--color-accent); }
+  </style>
 </head>
 <body>
 
-<header>
-<h1>Overview</h1>
-</header>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<nav>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="data.html">Projects</a>
-<a href="contact.html">Contact</a>
-<a href="overview.html">Overview</a>
-    <a href="chatbot.html">Chatbot</a>
-    <a href="card.html">Card</a>
-    
-</nav>
+  <header>
+    <a href="index.html" class="site-title">Mohammed Ghayada</a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="data.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="overview.html" aria-current="page">Overview</a></li>
+        <li><a href="chatbot.html">Chatbot</a></li>
+        <li><a href="card.html">Card</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<main class="container">
+  <main id="main-content">
+    <h1>Portfolio Overview</h1>
+    <p>Responsive layout built with CSS Grid (main structure) and Flexbox (internal areas). Resize the window to see it adapt.</p>
 
-<section>
-<h2>Profile</h2>
-<p>My name is Mohamed. I am learning web development.</p>
+    <div class="overview-grid">
 
-<h2>Skills</h2>
-<ul>
-<li>HTML</li>
-<li>CSS</li>
-<li>Java</li>
-</ul>
-</section>
+      <!-- LEFT: Profile sidebar (Flexbox) -->
+      <aside class="profile-sidebar" aria-label="Profile">
+        <div class="avatar" aria-hidden="true">👨‍💻</div>
+        <p class="profile-name">Mohammed Ghayada</p>
+        <p class="profile-role">AI Student · Year 1 · UVT</p>
+        <p class="profile-desc">First-year Artificial Intelligence student passionate about programming and building web projects.</p>
 
-<section>
-<h2>Projects</h2>
+        <section aria-labelledby="skills-ov">
+          <h2 id="skills-ov" style="font-size:0.82rem; color:var(--color-accent); text-transform:uppercase; letter-spacing:0.08em; margin:0 0 0.5rem; border:none; padding:0;">Skills</h2>
+          <div class="skills-bars">
+            <div class="skill-row">
+              <div class="skill-label"><span>HTML / CSS</span><span>70%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label"><span>JavaScript</span><span>60%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label"><span>Java</span><span>70%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label"><span>Git &amp; GitHub</span><span>60%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div>
+            </div>
+          </div>
+        </section>
+      </aside>
 
-<div class="cards">
-<div class="card">Bank System</div>
-<div class="card special">Portfolio Website</div>
-<div class="card">Calculator</div>
-<div class="card">Web Design</div>
-</div>
+      <!-- CENTRE: Projects (Grid) -->
+      <section aria-labelledby="proj-ov">
+        <h2 id="proj-ov">Selected Projects</h2>
+        <div class="project-cards">
+          <article class="card project-card highlight">
+            <p class="card-tag">Featured</p>
+            <h3>Developer Portfolio</h3>
+            <p>Multi-page accessible website with JS and responsive layout.</p>
+          </article>
+          <article class="card project-card">
+            <p class="card-tag">Java</p>
+            <h3>Bank System</h3>
+            <p>Console banking app with account management.</p>
+          </article>
+          <article class="card project-card">
+            <p class="card-tag">Java</p>
+            <h3>Calculator</h3>
+            <p>Functional calculator application in Java.</p>
+          </article>
+          <article class="card project-card">
+            <p class="card-tag">Web</p>
+            <h3>Web Design Project</h3>
+            <p>Responsive layout with CSS Grid and Flexbox.</p>
+          </article>
+        </div>
+      </section>
 
-</section>
+      <!-- RIGHT: Contact aside (Flexbox) -->
+      <aside class="contact-aside" aria-label="Contact details">
+        <h2>Contact</h2>
+        <a href="mailto:mohamad.ghayada04@e-uvt.ro">✉️ mohamad.ghayada04@e-uvt.ro</a>
+        <a href="https://github.com/mohamadghayada04" target="_blank" rel="noopener">🐙 github.com/mohamadghayada04</a>
+        <a href="contact.html">📬 Send a message</a>
+      </aside>
 
-</main>
+    </div>
+  </main>
 
-<footer>
-<p>© 2026 Mohamed</p>
-</footer>
+  <footer>
+    <p>© 2026 Mohammed Ghayada · Developer Portfolio · Web Technologies — UVT</p>
+  </footer>
 
 </body>
 </html>

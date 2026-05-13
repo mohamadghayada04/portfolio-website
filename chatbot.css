@@ -1,15 +1,100 @@
-#chat-box {
-    border: 1px solid black;
-    height: 200px;
-    overflow-y: auto;
-    margin-bottom: 10px;
-    padding: 10px;
+/* chatbot.css */
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
 }
 
-.user {
-    color: blue;
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
 }
 
-.bot {
-    color: green;
+.suggestion-btn {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
 }
+
+.suggestion-btn:hover,
+.suggestion-btn:focus {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  outline-offset: 3px;
+}
+
+.chat-container {
+  max-width: 660px;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  height: 460px;
+  box-shadow: var(--shadow);
+}
+
+.chat-log {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.chat-msg {
+  max-width: 78%;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  animation: fadein 0.2s ease;
+}
+
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.chat-msg.user {
+  align-self: flex-end;
+  background: var(--color-accent);
+  color: #fff;
+  font-weight: 500;
+}
+
+.chat-msg.bot {
+  align-self: flex-start;
+  background: var(--color-surface-2);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+.chat-msg.thinking {
+  font-style: italic;
+  opacity: 0.6;
+}
+
+.chat-form {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface-2);
+}
+
+.chat-form input { flex: 1; }
